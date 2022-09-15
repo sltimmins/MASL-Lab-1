@@ -18,7 +18,7 @@ class PopUpModalViewController: UIViewController {
     }
     @objc func updateCounter() {
         if count > 0 {
-            print("\(count) seconds until the explosion")
+            //print("\(count) seconds until the explosion")
             count -= 1
             countDownLabel.text = String(count)
             }

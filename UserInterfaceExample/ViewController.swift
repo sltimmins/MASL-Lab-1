@@ -9,7 +9,11 @@
 import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
-
+    
+    lazy var settings = {
+        return SettingsModel.sharedInstance()
+    }()
+    
     lazy var imageModel = {
         return ImageModel.sharedInstance()
     }()
@@ -26,9 +30,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let settings = SettingsClass.sharedInstance
-        self.view.backgroundColor = settings.backgroundColor
-
+        self.view.backgroundColor = settings.background
+        
         if let size = self.imageView?.image?.size{
             self.scrollView.addSubview(self.imageView!)
             self.scrollView.contentSize = size
