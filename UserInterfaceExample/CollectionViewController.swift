@@ -11,10 +11,20 @@ import UIKit
 private let reuseIdentifier = "CollectCell"
 
 class CollectionViewController: UICollectionViewController {
+    
+    lazy var settings = {
+        return SettingsModel.sharedInstance()
+    }()
+    
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
+        self.view.backgroundColor = settings.background
+        
+        print(settings.background)
 
+        super.viewDidLoad()
+                
         // Register cell classes
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 

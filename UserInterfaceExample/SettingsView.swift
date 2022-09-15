@@ -10,9 +10,12 @@ import UIKit
 
 class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    let settings = SettingsClass.sharedInstance
+    lazy var settings = {
+        return SettingsModel.sharedInstance()
+    }()
     
     let pickerData = ["Default","Red", "Green", "Blue", "Magenta"]
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -30,18 +33,22 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         switch row {
         case 0:
             self.view.backgroundColor = UIColor.systemBackground
-            settings.backgroundColor = UIColor.systemBackground
+            self.settings.background = UIColor.systemBackground
         case 1:
             self.view.backgroundColor = UIColor.red
-            settings.backgroundColor = UIColor.red
+            self.settings.background = UIColor.red
         case 2:
             self.view.backgroundColor = UIColor.green
+            self.settings.background = UIColor.green
         case 3:
             self.view.backgroundColor = UIColor.blue
+            self.settings.background = UIColor.blue
         case 4:
             self.view.backgroundColor = UIColor.magenta
+            self.settings.background = UIColor.magenta
         default:
             self.view.backgroundColor = UIColor.white
+            self.settings.background = UIColor.white
         }
         
     }
@@ -60,6 +67,8 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = settings.background
 
         // Do any additional setup after loading the view.
         SwitchLabel.text = "Dark Mode"

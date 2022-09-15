@@ -29,8 +29,4 @@
     return _background;
 }
 
--(void)setBackground:(UIColor *)background{
-    self.background = background;
-}
-
 @end

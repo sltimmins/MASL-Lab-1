@@ -10,14 +10,21 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    lazy var settings = {
+        return SettingsModel.sharedInstance()
+    }()
+
     var timer: Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = settings.background
+        
         timer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
         
     }
     @objc func popModal(){
-        print("Start the bomb")
+        //print("Start the bomb")
         performSegue(withIdentifier: "goToBomb", sender: self)
 //        timer?.invalidate()
     }
