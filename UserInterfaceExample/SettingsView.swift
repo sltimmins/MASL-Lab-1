@@ -57,16 +57,15 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var Slider: UISlider!
     @IBOutlet weak var Switch: UISwitch!
     @IBOutlet weak var PickerButton: UIButton!
-    @IBAction func FirstSecond(_ sender: Any) {
-    }
+    @IBOutlet weak var SegmentedControl: UISegmentedControl!
+
     
     @IBOutlet weak var SliderLabel: UILabel!
     @IBOutlet weak var StepperLabel: UILabel!
     @IBOutlet weak var SwitchLabel: UILabel!
     
     @IBOutlet weak var Picker: UIPickerView!
-    
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -93,7 +92,23 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         Picker.delegate = self
         Picker.isHidden = true
         
+        SegmentedControl.setTitle("On", forSegmentAt: 0)
+        SegmentedControl.setTitle("Off", forSegmentAt: 1)
+        
     }
+    
+    @IBAction func FirstSecond(_ sender: Any) {
+        switch SegmentedControl.selectedSegmentIndex
+            {
+            case 0:
+                Switch.isEnabled = true
+            case 1:
+                Switch.isEnabled = false
+            default:
+                break
+            }
+    }
+    
     @IBAction func SliderAction(_ sender: UISlider) {
         SliderLabel.textColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
         Slider.thumbTintColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)

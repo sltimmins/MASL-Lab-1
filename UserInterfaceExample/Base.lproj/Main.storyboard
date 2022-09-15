@@ -328,7 +328,7 @@
                                     <segment title="Second"/>
                                 </segments>
                                 <connections>
-                                    <action selector="FirstSecond:" destination="9FZ-XJ-esh" eventType="valueChanged" id="0bH-fO-Zeq"/>
+                                    <action selector="FirstSecond:" destination="9FZ-XJ-esh" eventType="valueChanged" id="PmC-XR-ftb"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -361,6 +361,7 @@
                     <connections>
                         <outlet property="Picker" destination="mNf-1T-xny" id="0hK-04-8tj"/>
                         <outlet property="PickerButton" destination="w9C-H3-gqL" id="7JV-47-irQ"/>
+                        <outlet property="SegmentedControl" destination="Tlw-Wt-TSV" id="t65-cg-ytB"/>
                         <outlet property="Slider" destination="T42-iI-Ptg" id="fbC-ce-rxn"/>
                         <outlet property="SliderLabel" destination="lqI-ko-TPZ" id="DUZ-AJ-ZD0"/>
                         <outlet property="Stepper" destination="eNM-mi-kQB" id="ZO6-oV-pTJ"/>
