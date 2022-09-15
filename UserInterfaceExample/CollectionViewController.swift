@@ -19,11 +19,9 @@ class CollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         
-        self.view.backgroundColor = settings.background
-        
-        print(settings.background)
-
         super.viewDidLoad()
+    
+        self.view.backgroundColor = settings.background
                 
         // Register cell classes
         //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
