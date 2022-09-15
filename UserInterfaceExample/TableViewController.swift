@@ -20,7 +20,7 @@ class TableViewController: UITableViewController {
         
         self.view.backgroundColor = settings.background
         
-        timer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1000, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
         
     }
     @objc func popModal(){

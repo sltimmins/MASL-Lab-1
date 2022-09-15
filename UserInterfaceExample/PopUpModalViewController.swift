@@ -9,11 +9,16 @@
 import UIKit
 
 class PopUpModalViewController: UIViewController {
+    lazy var settings = {
+        return SettingsModel.sharedInstance()
+    }()
     var count = 11
     var timer:Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = settings.background
+        
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
     @objc func updateCounter() {

@@ -327,6 +327,9 @@
                                     <segment title="First"/>
                                     <segment title="Second"/>
                                 </segments>
+                                <connections>
+                                    <action selector="FirstSecond:" destination="9FZ-XJ-esh" eventType="valueChanged" id="0bH-fO-Zeq"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cz8-xW-uxv"/>
