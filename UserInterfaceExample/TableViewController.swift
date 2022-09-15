@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
     var timer: Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 600, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
         
     }
     @objc func popModal(){
