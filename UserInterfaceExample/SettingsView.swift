@@ -71,6 +71,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         
         
         SliderLabel.text = "Background Darkness"
+        SliderLabel.textColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         Slider.maximumValue = 255
         Slider.thumbTintColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         
@@ -83,7 +84,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         
     }
     @IBAction func SliderAction(_ sender: UISlider) {
-//        SliderLabel.text = String(Slider.value)
+        SliderLabel.textColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
         Slider.thumbTintColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
         Slider.tintColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
 //        sender.setValue(round(sender.value), animated:true)
