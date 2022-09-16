@@ -14,6 +14,10 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         return SettingsModel.sharedInstance()
     }()
     
+    lazy var imageModel:ImageModel = {
+        return ImageModel.sharedInstance()
+    }()
+    
     let pickerData = ["Default","Red", "Green", "Blue", "Magenta"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -97,6 +101,8 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         
         StepperLabel.text = "Minimum Amount of Images Shown: " + String(settings.imageAmount)
         Stepper.value = Double(settings.imageAmount)
+        Stepper.maximumValue = Double(self.imageModel.imageNames.count)
+
         
         PickerButton.setTitle("Set Background Color", for: .normal)
         Picker.dataSource = self
