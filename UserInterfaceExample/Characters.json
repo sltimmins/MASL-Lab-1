@@ -11,8 +11,24 @@
             "image": "patrick"
         },
         {
+            "name": "Sandy",
+            "bio": "Sandra Jennifer Cheeks is one of the main characters in the Nickelodeon TV show, SpongeBob SquarePants. She is an anthropomorphic squirrel who is one of SpongeBob's best friends. Sandy is notable for her Texan characteristics, stereotypical accent and passion for science.",
+            "image": "sandy"
+        },
+        {
+            "name": "Mr. Krabs",
+            "bio": "Eugene Harold Krabs, more commonly known as Mr. Krabs (born November 30, 1942), is one of the ten main characters in the SpongeBob SquarePants franchise. He is a miserly red crab who lives in an anchor with his daughter, Pearl, who is a young whale. He is the owner and founder of the Krusty Krab restaurant as well as the employer of both SpongeBob and Squidward.",
+            "image": "krabs"
+        },
+        {
+            "name": "Plankton",
+            "bio": "Sheldon J. Plankton, more commonly known as Plankton, is one of the ten main characters of the SpongeBob SquarePants franchise. He is a planktonic copepod who runs the Chum Bucket restaurant alongside Karen, a waterproof computer who is his sidekick and wife. The Chum Bucket is highly unpopular in Bikini Bottom because it serves chum, a type of bait made from fish meat.",
+            "image": "plankton"
+        },
+        {
             "name": "test",
-            "bio": "Patrick Star (born August 17), is the one of the ten main characters of the animated series, SpongeBob SquarePants, and the main character of his own spin-off, The Patrick Star Show. He is SpongeBob's best friend as well as one of his two neighbors."
+            "bio": "Weird how you chose the test one instead of the - you know - actual characters, but that's not for me to judge :/",
+            "image": "test"
         }
     ]
 }
