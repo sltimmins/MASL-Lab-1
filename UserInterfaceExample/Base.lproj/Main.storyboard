@@ -331,6 +331,13 @@
                                     <action selector="FirstSecond:" destination="9FZ-XJ-esh" eventType="valueChanged" id="PmC-XR-ftb"/>
                                 </connections>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-wT-R8a">
+                                <rect key="frame" x="20" y="397" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cz8-xW-uxv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -362,6 +369,7 @@
                         <outlet property="Picker" destination="mNf-1T-xny" id="0hK-04-8tj"/>
                         <outlet property="PickerButton" destination="w9C-H3-gqL" id="7JV-47-irQ"/>
                         <outlet property="SegmentedControl" destination="Tlw-Wt-TSV" id="t65-cg-ytB"/>
+                        <outlet property="SegmentedControlLabel" destination="XiH-wT-R8a" id="uXN-iM-nud"/>
                         <outlet property="Slider" destination="T42-iI-Ptg" id="fbC-ce-rxn"/>
                         <outlet property="SliderLabel" destination="lqI-ko-TPZ" id="DUZ-AJ-ZD0"/>
                         <outlet property="Stepper" destination="eNM-mi-kQB" id="ZO6-oV-pTJ"/>

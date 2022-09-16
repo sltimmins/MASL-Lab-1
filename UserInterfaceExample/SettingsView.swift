@@ -63,6 +63,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     @IBOutlet weak var SliderLabel: UILabel!
     @IBOutlet weak var StepperLabel: UILabel!
     @IBOutlet weak var SwitchLabel: UILabel!
+    @IBOutlet weak var SegmentedControlLabel: UILabel!
     
     @IBOutlet weak var Picker: UIPickerView!
         
@@ -80,12 +81,12 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         }
         
         
-        SliderLabel.text = "Background Darkness"
+        SliderLabel.text = "Slider Redness"
         SliderLabel.textColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         Slider.maximumValue = 255
         Slider.thumbTintColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         
-        StepperLabel.text = String(settings.imageAmount)
+        StepperLabel.text = "Amount of Images Shown: " + String(settings.imageAmount)
         Stepper.value = Double(settings.imageAmount)
         
         PickerButton.setTitle("Set Settings Background Color", for: .normal)
@@ -93,6 +94,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         Picker.delegate = self
         Picker.isHidden = true
         
+        SegmentedControlLabel.text = "Lock Dark Mode"
         SegmentedControl.setTitle("On", forSegmentAt: 0)
         SegmentedControl.setTitle("Off", forSegmentAt: 1)
         
@@ -122,7 +124,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
 
         self.settings.imageAmount = Int(Stepper.value)
         
-        StepperLabel.text = String(self.settings.imageAmount)
+        StepperLabel.text = "Amount of Images Shown: " + String(self.settings.imageAmount)
     }
     
     @IBAction func SwitchAction(_ sender: Any) {
