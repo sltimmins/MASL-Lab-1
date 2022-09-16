@@ -28,6 +28,7 @@ class PopUpModalViewController: UIViewController {
             countDownLabel.text = String(count)
             }
         else{
+            countDownLabel.text = "SIKE :)"
             timer?.invalidate()
         }
     }
