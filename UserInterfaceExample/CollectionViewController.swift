@@ -12,6 +12,7 @@ private let reuseIdentifier = "CollectCell"
 
 class CollectionViewController: UICollectionViewController {
     
+    // Lazy instantiation of settings
     lazy var settings = {
         return SettingsModel.sharedInstance()
     }()
@@ -21,11 +22,10 @@ class CollectionViewController: UICollectionViewController {
         
         super.viewDidLoad()
                 
-        // Register cell classes
-        //self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
     }
     
+    // Sets the correct background color based off of settings
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         collectionView.backgroundColor = settings.background

@@ -10,11 +10,12 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    // Lazy instantiation of
+    // Lazy instantiation of settings
     lazy var settings = {
         return SettingsModel.sharedInstance()
     }()
-
+    
+    // Create the timer
     var timer: Timer?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,7 @@ class TableViewController: UITableViewController {
         
     }
     
+    // Updates the view with the correct settings (takes a second tho)
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         self.view.backgroundColor = settings.background
@@ -35,6 +37,7 @@ class TableViewController: UITableViewController {
 //        timer?.invalidate()
     }
     
+    // Lazy instantiation of the imageModel
     lazy var imageModel:ImageModel = {
         return ImageModel.sharedInstance()
     }()
@@ -60,9 +63,10 @@ class TableViewController: UITableViewController {
     }
 
     
+    // Set up the cells in the table
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if indexPath.section == 0 {
+        if indexPath.section == 0 { // For the individual characters
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageNameCell", for: indexPath)
             cell.backgroundColor = settings.background
             
@@ -72,7 +76,7 @@ class TableViewController: UITableViewController {
             }
             
             return cell
-        }else if indexPath.section == 1 {
+        }else if indexPath.section == 1 { // For the summary/colleciton view
             let cell = tableView.dequeueReusableCell(withIdentifier: "ViewAll", for: indexPath)
             cell.backgroundColor = settings.background
             
@@ -81,7 +85,7 @@ class TableViewController: UITableViewController {
             cell.detailTextLabel?.text = "Summary"
             
             return cell
-        }else {
+        }else { // For the settings cell
             let cell = tableView.dequeueReusableCell(withIdentifier: "Settings", for: indexPath)
             cell.backgroundColor = settings.background
             
