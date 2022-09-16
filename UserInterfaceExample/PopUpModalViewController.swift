@@ -21,6 +21,7 @@ class PopUpModalViewController: UIViewController {
         
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateCounter), userInfo: nil, repeats: true)
     }
+    // function to count down the timer
     @objc func updateCounter() {
         if count > 0 {
             //print("\(count) seconds until the explosion")
@@ -28,7 +29,11 @@ class PopUpModalViewController: UIViewController {
             countDownLabel.text = String(count)
             }
         else{
+            // if timer runs out it resets the app settings
             countDownLabel.text = "SIKE :)"
+            self.settings.background = UIColor.systemBackground
+            self.view.backgroundColor = UIColor.systemBackground
+            self.settings.imageAmount = 1
             timer?.invalidate()
         }
     }
