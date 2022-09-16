@@ -85,7 +85,8 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         Slider.maximumValue = 255
         Slider.thumbTintColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         
-        StepperLabel.text = "Displayed Images"
+        StepperLabel.text = String(settings.imageAmount)
+        Stepper.value = Double(settings.imageAmount)
         
         PickerButton.setTitle("Set Settings Background Color", for: .normal)
         Picker.dataSource = self
@@ -118,7 +119,10 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
     
     
     @IBAction func StepperAction(_ sender: Any) {
-        StepperLabel.text = String(Stepper.value)
+
+        self.settings.imageAmount = Int(Stepper.value)
+        
+        StepperLabel.text = String(self.settings.imageAmount)
     }
     
     @IBAction func SwitchAction(_ sender: Any) {

@@ -10,6 +10,7 @@
 
 @implementation SettingsModel
 @synthesize background = _background;
+@synthesize imageAmount = _imageAmount;
 
 +(SettingsModel*)sharedInstance{
     static SettingsModel* _sharedInstance = nil;
@@ -27,6 +28,14 @@
     }
     
     return _background;
+}
+
+-(NSInteger)imageAmount{
+    if(!_imageAmount) {
+        _imageAmount = 1;
+    }
+    
+    return (_imageAmount);
 }
 
 @end

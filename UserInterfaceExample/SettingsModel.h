@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 +(SettingsModel*)sharedInstance;
 
 -(UIColor*)background;
-
--(void)setBackground:(UIColor *)background;
+-(NSInteger)imageAmount;
 
 @property (strong, nonatomic) UIColor* background;
+@property (nonatomic, assign) NSInteger imageAmount;
 
 @end
 

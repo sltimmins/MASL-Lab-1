@@ -18,11 +18,16 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = settings.background
-        
         timer = Timer.scheduledTimer(timeInterval: 1000, target: self, selector: #selector(popModal), userInfo: nil, repeats: true)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.view.backgroundColor = settings.background
+        self.tableView.reloadData()
+    }
+    
     @objc func popModal(){
         //print("Start the bomb")
         performSegue(withIdentifier: "goToBomb", sender: self)
@@ -42,7 +47,12 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return self.imageModel.imageNames.count
+            if settings.imageAmount <= self.imageModel.imageNames.count{
+                return settings.imageAmount
+            } else {
+                return self.imageModel.imageNames.count
+            }
+            
         }
         
         return 1
@@ -53,6 +63,7 @@ class TableViewController: UITableViewController {
         
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ImageNameCell", for: indexPath)
+            cell.backgroundColor = settings.background
             
             // Configure the cell...
             if let name = (self.imageModel.imageNames[indexPath.row] as AnyObject).getName() as? String {
@@ -62,6 +73,7 @@ class TableViewController: UITableViewController {
             return cell
         }else if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ViewAll", for: indexPath)
+            cell.backgroundColor = settings.background
             
             // Configure the cell...
             cell.textLabel?.text = "All Image"
@@ -70,6 +82,7 @@ class TableViewController: UITableViewController {
             return cell
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "Settings", for: indexPath)
+            cell.backgroundColor = settings.background
             
             // Configure the cell...
             cell.textLabel?.text = "Settings"
