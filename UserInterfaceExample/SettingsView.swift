@@ -10,6 +10,7 @@ import UIKit
 
 class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // Lazy instantiations of the settings and image models
     lazy var settings = {
         return SettingsModel.sharedInstance()
     }()
@@ -18,6 +19,9 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         return ImageModel.sharedInstance()
     }()
     
+    /* PICKER SECTION*/
+    
+    // Sets the data for the color picker
     let pickerData = ["Default","Red", "Green", "Blue", "Magenta"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -62,6 +66,8 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         }
         
     }
+    
+    // Here are all the outlets for the labels and pieces of the settings page
 
     @IBOutlet weak var Stepper: UIStepper!
     @IBOutlet weak var Slider: UISlider!
@@ -79,13 +85,15 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         
     @IBOutlet weak var NewSettingsView: UIView!
     
+    // Loads default stuff onto the page
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Set the background colors to the correctly selected one
         self.view.backgroundColor = settings.background
         self.NewSettingsView.backgroundColor = settings.background
 
-        // Do any additional setup after loading the view.
+        // Label the Switch and set it to the correct option depending on the setting
         SwitchLabel.text = "Dark Mode"
         if(UIApplication.shared.keyWindow?.overrideUserInterfaceStyle == .dark){
             Switch.setOn(true, animated: true)
@@ -93,28 +101,31 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
             Switch.setOn(false, animated: true)
         }
         
-        
+        // Slider section
         SliderLabel.text = "Slider Redness"
         SliderLabel.textColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         Slider.maximumValue = 255
         Slider.thumbTintColor = UIColor.init(red: 0, green: 0, blue: 1, alpha: 1)
         
+        // Stepper section
         StepperLabel.text = "Minimum Amount of Images Shown: " + String(settings.imageAmount)
         Stepper.value = Double(settings.imageAmount)
-        Stepper.maximumValue = Double(self.imageModel.imageNames.count)
+        Stepper.maximumValue = Double(self.imageModel.imageNames.count) // Ensures you can't break the stepper by overdoing it
 
-        
+        // Picker Section
         PickerButton.setTitle("Set Background Color", for: .normal)
         Picker.dataSource = self
         Picker.delegate = self
         Picker.isHidden = true
         
+        // Segmented Control Section
         SegmentedControlLabel.text = "Lock Dark Mode"
         SegmentedControl.setTitle("On", forSegmentAt: 0)
         SegmentedControl.setTitle("Off", forSegmentAt: 1)
         
     }
     
+    // This is the function for the enabling of the Dark Mode Switch (Segmented Control section)
     @IBAction func FirstSecond(_ sender: Any) {
         switch SegmentedControl.selectedSegmentIndex
             {
@@ -127,21 +138,21 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
             }
     }
     
+    // Changes the color via the slider's movement
     @IBAction func SliderAction(_ sender: UISlider) {
         SliderLabel.textColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
         Slider.thumbTintColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
         Slider.tintColor = UIColor.init(red: CGFloat((Slider.value)/255), green: 0, blue: 1-CGFloat((Slider.value)/255), alpha: 1)
-//        sender.setValue(round(sender.value), animated:true)
     }
     
-    
+    // Changes the stepper
     @IBAction func StepperAction(_ sender: Any) {
 
         self.settings.imageAmount = Int(Stepper.value)
-        
         StepperLabel.text = "Minimum Amount of Images Shown: " + String(self.settings.imageAmount)
     }
     
+    // Dark Mode Switch action
     @IBAction func SwitchAction(_ sender: Any) {
         if(Switch.isOn){
             let window = UIApplication.shared.keyWindow
@@ -152,7 +163,7 @@ class SettingsView: UIViewController, UIPickerViewDataSource, UIPickerViewDelega
         }
     }
 
-    
+    // For the Picker button (to activate the picker)
     @IBAction func PickerButtonPress(_ sender: Any) {
         Picker.isHidden = !Picker.isHidden
     }

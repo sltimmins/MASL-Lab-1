@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
+    // Lazy instantiation of
     lazy var settings = {
         return SettingsModel.sharedInstance()
     }()
