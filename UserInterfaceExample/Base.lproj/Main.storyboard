@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPe-3A-bLs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gPe-3A-bLs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Spongebob Wiki-->
         <scene sceneID="grc-Lg-tHq">
             <objects>
                 <tableViewController id="ZyN-I7-7bF" customClass="TableViewController" customModule="UserInterfaceExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,7 +92,7 @@
                             <outlet property="delegate" destination="ZyN-I7-7bF" id="jXo-Le-DKA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Y9r-PH-p7f"/>
+                    <navigationItem key="navigationItem" title="Spongebob Wiki" id="Y9r-PH-p7f"/>
                     <connections>
                         <segue destination="mcJ-xv-xgc" kind="presentation" identifier="goToBomb" id="bLa-C5-qNU"/>
                     </connections>
@@ -277,6 +277,11 @@
                                 <exclude reference="SqH-z8-uK2"/>
                                 <exclude reference="XEw-SA-Gf5"/>
                                 <exclude reference="xpo-ya-KkF"/>
+                                <exclude reference="9L0-Up-ckJ"/>
+                                <exclude reference="9m8-Ea-9re"/>
+                                <exclude reference="aGP-Az-Y4d"/>
+                                <exclude reference="gQO-Z9-Bya"/>
+                                <exclude reference="uO5-Ln-GaL"/>
                                 <exclude reference="0JD-mf-eMk"/>
                                 <exclude reference="2BX-78-Eki"/>
                                 <exclude reference="9EF-jL-dtc"/>
@@ -285,11 +290,6 @@
                                 <exclude reference="VZA-kv-LT6"/>
                                 <exclude reference="aci-cg-aGK"/>
                                 <exclude reference="arB-d6-9xK"/>
-                                <exclude reference="9L0-Up-ckJ"/>
-                                <exclude reference="9m8-Ea-9re"/>
-                                <exclude reference="aGP-Az-Y4d"/>
-                                <exclude reference="gQO-Z9-Bya"/>
-                                <exclude reference="uO5-Ln-GaL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -300,25 +300,25 @@
                                 <include reference="K63-RA-VBj"/>
                                 <include reference="SqH-z8-uK2"/>
                                 <include reference="XEw-SA-Gf5"/>
+                                <include reference="9L0-Up-ckJ"/>
                                 <include reference="2BX-78-Eki"/>
                                 <include reference="VZA-kv-LT6"/>
                                 <include reference="aci-cg-aGK"/>
                                 <include reference="arB-d6-9xK"/>
-                                <include reference="9L0-Up-ckJ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="constraints">
                                 <include reference="Grl-Vb-cSF"/>
                                 <include reference="xpo-ya-KkF"/>
-                                <include reference="0JD-mf-eMk"/>
-                                <include reference="9EF-jL-dtc"/>
-                                <include reference="AtC-ZC-0vt"/>
-                                <include reference="TdO-2p-jeU"/>
                                 <include reference="9m8-Ea-9re"/>
                                 <include reference="aGP-Az-Y4d"/>
                                 <include reference="gQO-Z9-Bya"/>
                                 <include reference="uO5-Ln-GaL"/>
+                                <include reference="0JD-mf-eMk"/>
+                                <include reference="9EF-jL-dtc"/>
+                                <include reference="AtC-ZC-0vt"/>
+                                <include reference="TdO-2p-jeU"/>
                             </mask>
                         </variation>
                     </view>
@@ -343,20 +343,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bomb" translatesAutoresizingMaskIntoConstraints="NO" id="Y0S-HT-mn4">
-                                <rect key="frame" x="31" y="75" width="353" height="201"/>
+                                <rect key="frame" x="31" y="119" width="353" height="201"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="353" id="NiO-ua-4eu"/>
                                     <constraint firstAttribute="height" constant="201" id="WxG-cI-GNV"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Self Destruct Initiated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg0-wv-BMe">
-                                <rect key="frame" x="20" y="0.0" width="374" height="39"/>
+                                <rect key="frame" x="20" y="44" width="374" height="39"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
                                 <color key="textColor" systemColor="systemCyanColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="or2-9o-2cD">
-                                <rect key="frame" x="20" y="328" width="374" height="48"/>
+                                <rect key="frame" x="20" y="372" width="374" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="IEM-lw-zik"/>
                                 </constraints>
@@ -365,7 +365,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOR-tl-hsO">
-                                <rect key="frame" x="20" y="441" width="374" height="31"/>
+                                <rect key="frame" x="20" y="485" width="374" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="DEFUSE THE BOMB"/>
                                 <connections>
